@@ -12,7 +12,7 @@ mat-card-content h2 {
 }
 
 .balance-card {
-    background-color: #FF6347;
+    background-color: #f88571;
     max-width: 350px;
     margin: 1rem auto;
 }
@@ -76,6 +76,3 @@ mat-list-item .expense-icon {
     color: #FF6347 !important;
 } 
 
-div {
-    font-weight: bold;
-}
