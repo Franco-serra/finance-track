@@ -3,7 +3,8 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 const dotenv = require('dotenv');
 const bodyParser = require('body-parser');
-
+const auth = require('./src/routes/auth');
+const transaction = require('./src/routes/transaction')
 
 dotenv.config();
 
@@ -21,11 +22,11 @@ app.get('/', (req, res) => {
     res.json({ message: '🚀 FinanceTrack API funcionando!' });
 });
 
-// Importar rutas (las crearás después)
-// const authRoutes = require('./routes/auth');
-// const transactionRoutes = require('./routes/transactions');
-// app.use('/api/auth', authRoutes);
-// app.use('/api/transactions', transactionRoutes);
+app.use(express.json());
+
+app.use('/api/auth', auth);
+app.use('/api/transaction', transaction)
+
 
 
 const PORT = process.env.PORT || 3000;
