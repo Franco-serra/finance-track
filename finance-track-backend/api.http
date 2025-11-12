@@ -1,0 +1,74 @@
+### AUTH ENDPOINTS
+
+### REGISTER - Crear nuevo usuario
+POST http://localhost:3000/api/auth
+Content-Type: application/json
+
+{
+    "name": "Usuario Test",
+    "email": "test@example.com",
+    "password": "123456"
+}
+
+### LOGIN - Iniciar sesión
+POST http://localhost:3000/api/auth/login
+Content-Type: application/json
+
+{
+    "email": "test@example.com",
+    "password": "123456"
+}
+
+### TRANSACTION ENDPOINTS
+
+### CREATE TRANSACTION - Crear nueva transacción (PROTEGIDO)
+POST http://localhost:3000/api/transaction
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OTE0ODM5YjRlZjZhZGE1MDc4MGJlMzAiLCJpYXQiOjE3NjI5NTIwOTcsImV4cCI6MTc2MzAzODQ5N30.h43ZmdMwnwugI-AS2Lhyze_lVoSnSJKz5sM4VVgnXQo
+
+
+{
+    "description": "Salario mensual",
+    "amount": 10000,
+    "type": "income",
+    "category": "Salary"
+}
+
+### GET TRANSACTIONS - Obtener mis transacciones (PROTEGIDO)
+GET http://localhost:3000/api/transaction
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OTE0ODM5YjRlZjZhZGE1MDc4MGJlMzAiLCJpYXQiOjE3NjI5NTIwOTcsImV4cCI6MTc2MzAzODQ5N30.h43ZmdMwnwugI-AS2Lhyze_lVoSnSJKz5sM4VVgnXQo
+
+### CREATE EXPENSE TRANSACTION - Ejemplo de gasto
+POST http://localhost:3000/api/transaction
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OTE0ODM5YjRlZjZhZGE1MDc4MGJlMzAiLCJpYXQiOjE3NjI5NTIwOTcsImV4cCI6MTc2MzAzODQ5N30.h43ZmdMwnwugI-AS2Lhyze_lVoSnSJKz5sM4VVgnXQo
+
+{
+    "description": "Supermercado",
+    "amount": 25000,
+    "type": "expense",
+    "category": "Groceries"
+}
+
+### TEST SIN TOKEN - Debe fallar (PROTEGIDO)
+POST http://localhost:3000/api/transaction
+Content-Type: application/json
+
+{
+    "description": "Test sin token",
+    "amount": 100,
+    "type": "expense",
+    "category": "Test"
+}
+
+### Actualizar transaccion 
+
+PUT http://localhost:3000/api/transaction/691484784ef6ada50780be39
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OTE0ODM5YjRlZjZhZGE1MDc4MGJlMzAiLCJpYXQiOjE3NjI5NTIwOTcsImV4cCI6MTc2MzAzODQ5N30.h43ZmdMwnwugI-AS2Lhyze_lVoSnSJKz5sM4VVgnXQo
+Content-Type: application/json
+
+{
+    "description": "Salario actualizado",
+    "amount": 200005,
+    "category": "Salary Updated"
+}
