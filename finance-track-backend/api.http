@@ -36,7 +36,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OTE0O
 
 ### GET TRANSACTIONS - Obtener mis transacciones (PROTEGIDO)
 GET http://localhost:3000/api/transaction
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OTE0ODM5YjRlZjZhZGE1MDc4MGJlMzAiLCJpYXQiOjE3NjI5NTIwOTcsImV4cCI6MTc2MzAzODQ5N30.h43ZmdMwnwugI-AS2Lhyze_lVoSnSJKz5sM4VVgnXQo
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OTE0ODM5YjRlZjZhZGE1MDc4MGJlMzAiLCJpYXQiOjE3NjI5NTQ5ODUsImV4cCI6MTc2MzA0MTM4NX0.eBulKQs2NCSNDjw4J-Em38tlLx1lHhJZ7hSEsM6S0P0
 
 ### CREATE EXPENSE TRANSACTION - Ejemplo de gasto
 POST http://localhost:3000/api/transaction
@@ -72,3 +72,7 @@ Content-Type: application/json
     "amount": 200005,
     "category": "Salary Updated"
 }
+
+### DELETE TRANSACTION - Eliminar transacción
+DELETE http://localhost:3000/api/transaction/691484784ef6ada50780be39
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OTE0ODM5YjRlZjZhZGE1MDc4MGJlMzAiLCJpYXQiOjE3NjI5NTQ5ODUsImV4cCI6MTc2MzA0MTM4NX0.eBulKQs2NCSNDjw4J-Em38tlLx1lHhJZ7hSEsM6S0P0
