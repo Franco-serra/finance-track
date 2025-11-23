@@ -1,0 +1,39 @@
+<div class="form-container">
+    <h2>Add Transaction</h2>
+
+    <form (ngSubmit)="onSubmit()">
+        <!-- Income/Expense Selector -->
+        <div class="type-selector">
+            <button type="button" class="type-btn income-btn" [class.active]="type === 'income'"
+                (click)="type = 'income'">
+                <span class="icon">↑</span>
+                Income
+            </button>
+            <button type="button" class="type-btn expense-btn" [class.active]="type === 'expense'"
+                (click)="type = 'expense'">
+                <span class="icon">↓</span>
+                Expense
+            </button>
+        </div>
+
+        <!-- Description -->
+        <input type="text" placeholder="Description" [(ngModel)]="description" name="description" class="form-input"
+            required>
+
+        <!-- Amount -->
+        <input type="number" placeholder="Amount" [(ngModel)]="amount" name="amount" class="form-input" required>
+
+        <!-- Category -->
+        <input type="text" placeholder="Category" [(ngModel)]="category" name="category" class="form-input" required>
+
+        <!-- Buttons -->
+        <div class="form-actions">
+            <button type="submit" class="btn-primary" [disabled]="isLoading">
+                {{ isLoading ? 'Saving...' : 'Save' }}
+            </button>
+            <button type="button" class="btn-cancel" (click)="onCancel()">
+                Cancel
+            </button>
+        </div>
+    </form>
+</div>

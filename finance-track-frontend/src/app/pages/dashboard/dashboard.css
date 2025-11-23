@@ -34,21 +34,6 @@ mat-card-title {
     color: #333;
 }
 
-
-
-.fab-button {
-    position: fixed;
-    bottom: 2rem;
-    right: 2rem;
-    background-color: #FF6347;
-
-}
-
-.fab-button:hover {
-    background-color: #e5533d;
-
-}
-
 .transactions-card {
     margin-top: 1rem;
 }
@@ -76,3 +61,21 @@ mat-list-item .expense-icon {
     color: #FF6347 !important;
 } 
 
+.fab-button {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background-color: #FF6347; 
+  color: white;
+  z-index: 1000; 
+}
+
+.fab-button:hover {
+  background-color: #e5533d;
+}
+
+
+:host {
+  display: block;
+  position: relative;
+}
